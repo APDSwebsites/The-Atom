@@ -18,30 +18,15 @@ export default function Layout({ children }) {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#ECE7CA]">
-      <Head>
-        <title>The Atom - West Texas Arts & Culture</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <header className="relative w-full h-40 md:h-60">
+      <header className="relative w-full h-80 md:h-100 flex justify-center items-start bg-black">
         <Image
-          src="/images/the-atom-header-best.jpg"
+          src="/images/Atom Logo Full.svg"
           alt="The Atom Header"
-          layout="fill"
-          objectFit="cover"
+          width={500} // Set the width to the original size
+          height={200} // Set the height to the original size
           priority
         />
 
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="text-center">
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
-              The Atom
-            </h1>
-            <p className="text-sm md:text-base text-white">
-              West Texas Arts & Culture for the Progressive Element
-            </p>
-          </div>
-        </div>
         <div className="absolute top-4 left-4 w-16 h-16 md:w-24 md:h-24">
           <Image
             src="/images/the-atom-logo.jpg"
@@ -55,7 +40,9 @@ export default function Layout({ children }) {
       <nav className="bg-[#f07c34] text-black">
         <div className="container mx-auto py-2">
           <ul
-            className={`flex ${isMobile ? "flex-col" : "flex-row space-x-4"}`}
+            className={`flex justify-end ${
+              isMobile ? "flex-col" : "flex-row space-x-4"
+            }`}
           >
             <li className={isMobile ? "mb-2" : ""}>
               <Link href="/" className="hover:text-gray-700">
@@ -68,13 +55,8 @@ export default function Layout({ children }) {
               </Link>
             </li>
             <li className={isMobile ? "mb-2" : ""}>
-              <Link href="/artists-events" className="hover:text-gray-300">
-                Artists & Events
-              </Link>
-            </li>
-            <li className={isMobile ? "mb-2" : ""}>
               <Link href="/archive" className="hover:text-gray-300">
-                Archive
+                Search
               </Link>
             </li>
           </ul>
@@ -85,9 +67,17 @@ export default function Layout({ children }) {
         {children}
       </main>
 
-      <footer className="bg-gray-800 text-white p-4">
+      <footer className="bg-black text-white p-4">
         <div className="container mx-auto text-center">
           <p>Published by Atom Media</p>
+          <div className="relative w-16 h-16 md:w-24 md:h-24 mx-auto mt-4">
+            <Image
+              src="/images/the-atom-logo.jpg"
+              alt="The Atom Logo"
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
         </div>
       </footer>
     </div>

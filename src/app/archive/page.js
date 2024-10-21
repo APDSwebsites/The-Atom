@@ -4,13 +4,14 @@ import Layout from "../../components/Layout";
 export default function Archive() {
   return (
     <Layout>
-      <h1 className="text-3xl font-bold mb-8">Archive</h1>
+      <h1 className="text-3xl font-bold mb-8">Search</h1>
 
-      <div className="mb-8">
+      <div className="mb-8 flex justify-end">
         <input
           type="text"
-          placeholder="Search archives..."
-          className="w-full p-2 border border-gray-300 rounded"
+          placeholder="Search..."
+          className="p-2 border border-gray-300 rounded"
+          style={{ width: "12.5%" }} // 1/8 of 100%
         />
       </div>
 

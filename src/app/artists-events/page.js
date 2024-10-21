@@ -1,4 +1,5 @@
 // pages/artists-events.js
+//May get rid of entirely
 import Layout from "../../components/Layout";
 
 export default function ArtistsEvents() {
