@@ -36,7 +36,5 @@ export async function POST(request) {
 }
 
 export const config = {
-  api: {
-    bodyParser: false,
-  },
+  runtime: "experimental-edge", // Update with appropriate new configuration
 };

@@ -1,0 +1,16 @@
+[33m91d3bd1[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{0}: checkout: moving from main to master
+[33m040b249[m[33m ([m[1;32mmain[m[33m)[m HEAD@{1}: commit: Add changes to Article model and other updates
+[33m9926e50[m HEAD@{2}: commit: Ensure .next/trace is ignored
+[33m7a65298[m HEAD@{3}: commit: Add .next/trace to .gitignore
+[33m1b95754[m HEAD@{4}: pull origin master: Merge made by the 'ort' strategy.
+[33m60220b0[m HEAD@{5}: commit: Add changes to Article model and other updates
+[33m5a47e14[m HEAD@{6}: commit: Initial commit
+[33m398896c[m HEAD@{7}: commit: Upload
+[33m6960eba[m HEAD@{8}: commit (merge): Merge branch 'master'
+[33m22a35c7[m HEAD@{9}: checkout: moving from main to main
+[33m22a35c7[m HEAD@{10}: checkout: moving from master to main
+[33m91d3bd1[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{11}: checkout: moving from master to master
+[33m91d3bd1[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{12}: checkout: moving from master to master
+[33m91d3bd1[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{13}: commit: Initial commit
+[33m73154c5[m HEAD@{14}: commit: Initial commit
+[33m43f946c[m HEAD@{15}: commit (initial): Initial commit from Create Next App
