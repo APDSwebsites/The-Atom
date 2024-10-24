@@ -59,6 +59,13 @@ export default function Layout({ children }) {
                 Search
               </Link>
             </li>
+            {process.env.NODE_ENV === "development" && (
+              <li className={isMobile ? "mb-2" : ""}>
+                <Link href="/admin" className="hover:text-gray-300">
+                  Admin
+                </Link>
+              </li>
+            )}
           </ul>
         </div>
       </nav>
