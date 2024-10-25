@@ -4,20 +4,9 @@ import { join } from "path";
 
 export async function POST(request) {
   try {
-    const data = await request.formData();
-    const file = data.get("file");
-
-    if (!file) {
-      return NextResponse.json(
-        { success: false, error: "No file uploaded" },
-        { status: 400 }
-      );
-    }
-
-    const bytes = await file.arrayBuffer();
-    const buffer = Buffer.from(bytes);
-
-    // Create unique filename
+    const formData = await request.formData();
+    const file = formData.get("file");
+    const buffer = Buffer.from(await file.arrayBuffer());
     const filename = `${Date.now()}-${file.name.replace(/\s/g, "-")}`;
     const path = join(process.cwd(), "public/uploads", filename);
 
