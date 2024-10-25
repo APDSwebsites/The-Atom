@@ -1,1 +1,6 @@
-{}
+{
+  "/page": "app/page.js",
+  "/admin/create-article/page": "app/admin/create-article/page.js",
+  "/api/upload/route": "app/api/upload/route.js",
+  "/api/articles/route": "app/api/articles/route.js"
+}
