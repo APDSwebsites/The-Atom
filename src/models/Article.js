@@ -23,7 +23,11 @@ const ArticleSchema = new mongoose.Schema(
           required: true,
         },
         text: String,
-        imageUrl: String,
+        imageData: {
+          filename: String,
+          contentType: String,
+          base64Data: String,
+        },
         caption: String,
         order: Number,
       },
@@ -44,7 +48,6 @@ const ArticleSchema = new mongoose.Schema(
   }
 );
 
-// Prevent multiple models error during hot reload in development
 const Article =
   mongoose.models.Article || mongoose.model("Article", ArticleSchema);
 

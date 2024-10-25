@@ -1,11 +1,16 @@
 import { NextResponse } from "next/server";
-import { writeFile } from "fs/promises";
-import { join } from "path";
+
+export const config = {
+  runtime: "nodejs",
+  api: {
+    bodyParser: false,
+  },
+};
 
 export async function POST(request) {
   try {
-    const data = await request.formData();
-    const file = data.get("file");
+    const formData = await request.formData();
+    const file = formData.get("file");
 
     if (!file) {
       return NextResponse.json(
@@ -14,25 +19,29 @@ export async function POST(request) {
       );
     }
 
+    // Convert file to base64 for storing in MongoDB
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
+    const base64String = buffer.toString("base64");
 
-    // Create unique filename
+    // Generate a unique filename
     const filename = `${Date.now()}-${file.name.replace(/\s/g, "-")}`;
-    const path = join(process.cwd(), "public/uploads", filename);
 
-    await writeFile(path, buffer);
-
+    // Instead of saving to filesystem, return the base64 data
+    // You would typically save this to MongoDB along with the article
     return NextResponse.json({
       success: true,
-      imageUrl: `/uploads/${filename}`,
+      imageData: {
+        filename,
+        contentType: file.type,
+        base64Data: base64String,
+      },
     });
   } catch (error) {
+    console.error("Upload error:", error);
     return NextResponse.json(
       { success: false, error: error.message },
       { status: 500 }
     );
   }
 }
-
-export const runtime = "experimental-edge";

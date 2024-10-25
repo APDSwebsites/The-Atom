@@ -43,7 +43,7 @@ export default function ArticleForm() {
       const data = await response.json();
 
       if (data.success) {
-        handleContentChange(index, data.imageUrl, "imageUrl");
+        handleContentChange(index, data.imageData, "imageData");
       }
     } catch (error) {
       console.error("Error uploading image:", error);
@@ -233,13 +233,12 @@ export default function ArticleForm() {
                   accept="image/*"
                   className="mb-2"
                 />
-                {block.imageUrl && (
+                {block.imageData && (
                   <div className="relative h-40 w-full mb-2">
                     <Image
-                      src={block.imageUrl}
+                      src={`data:${block.imageData.contentType};base64,${block.imageData.base64Data}`}
                       alt="Uploaded content"
-                      fill
-                      className="object-contain"
+                      className="object-contain w-full h-full"
                     />
                   </div>
                 )}
