@@ -35,6 +35,4 @@ export async function POST(request) {
   }
 }
 
-export const config = {
-  runtime: "experimental-edge", // Update with appropriate new configuration
-};
+export const runtime = "experimental-edge";
