@@ -5,7 +5,7 @@ import Article from "@/models/Article";
 export async function POST(request) {
   try {
     console.log("Connecting to database...");
-    const connection = await dbConnect();
+    await dbConnect();
     console.log("Database connected successfully");
 
     const data = await request.json();
@@ -34,9 +34,13 @@ export async function GET() {
     const articles = await Article.find({}).sort({ publishDate: -1 });
     return NextResponse.json({ success: true, data: articles });
   } catch (error) {
-    console.error("Error fetching articles:", error);
+    console.error("Detailed error:", error);
     return NextResponse.json(
-      { success: false, error: error.message },
+      {
+        success: false,
+        error: error.message,
+        stack: process.env.NODE_ENV === "development" ? error.stack : undefined,
+      },
       { status: 400 }
     );
   }
