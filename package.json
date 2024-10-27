@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "test-db": "node -r dotenv/config scripts/test-connection.js",
     "lint": "next lint"
   },
   "dependencies": {

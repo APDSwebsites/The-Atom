@@ -1,0 +1,55 @@
+MONGODB_URI=mongodb+srv://sethshuey1:YSedTMwYcS77yilr@cluster0.2rpti.mongodb.net/theatom?retryWrites=true&w=majority
+mongodb+srv://<db_username>:<db_password>@cluster0.2rpti.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+LizAdams
+Lubbock806%94
+
+
+> Build error occurred
+Error: Page config in /github/workspace/src/app/api/upload/route.js is deprecated. Replace `export const config=…` with the following:
+  - `export const runtime = "experimental-edge"`
+Visit https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config for more information.
+    at getPageStaticInfo (/github/workspace/node_modules/next/dist/build/analysis/get-page-static-info.js:425:27)
+    at async getStaticInfoIncludingLayouts (/github/workspace/node_modules/next/dist/build/entries.js:108:28)
+    at async /github/workspace/node_modules/next/dist/build/entries.js:410:32
+    at async Promise.all (index 6)
+    at async Promise.all (index 0)
+    at async createEntrypoints (/github/workspace/node_modules/next/dist/build/entries.js:550:5)
+    at async Span.traceAsyncFn (/github/workspace/node_modules/next/dist/trace/trace.js:154:20)
+    at async webpackBuildImpl (/github/workspace/node_modules/next/dist/build/webpack-build/impl.js:104:25)
+    at async Object.workerMain (/github/workspace/node_modules/next/dist/build/webpack-build/impl.js:330:20) {
+  type: 'Error'
+}
+
+
+---End of Oryx build logs---
+Oryx has failed to build the solution
+
+
+
+Copilot responce:
+
+The error in the GitHub Actions job log is:
+
+**Error: Page config in /github/workspace/src/app/api/upload/route.js is deprecated. Replace `export const config=` with the following:**
+- `export const runtime = "experimental-edge"`
+
+### Explanation and Fix:
+The error message indicates that the `config` export in `src/app/api/upload/route.js` is deprecated and needs to be updated to use the `runtime` export with the value `"experimental-edge"`. This change is required by the Next.js framework.
+
+To fix the error:
+1. Open the file `src/app/api/upload/route.js`.
+2. Replace the deprecated `export const config` with `export const runtime = "experimental-edge"`.
+
+### Example of the Fix:
+If your current code looks like this:
+```javascript
+export const config = { ... };
+```
+Change it to:
+```javascript
+export const runtime = "experimental-edge";
+```
+
+This should resolve the deprecated configuration issue and allow the build to pass. Be sure to check the [Next.js documentation](https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config) for more details.
+
+
