@@ -1,1 +1,3 @@
-{}
+{
+  "/admin/create-article/page": "app/admin/create-article/page.js"
+}
