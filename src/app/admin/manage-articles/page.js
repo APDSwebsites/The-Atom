@@ -1,5 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
+import Link from "next/link";
+//import dbConnect from "@/lib/mongodb";
+//import Article from "/models/Article";
 
 export default function ManageArticles() {
   const [articles, setArticles] = useState([]);
@@ -21,6 +24,15 @@ export default function ManageArticles() {
     }
   };
 
+  const handleDelete = async (id) =>{
+    
+
+};
+
+//
+// Temporarily made the edit button go to the create articles page, need to make an edit article page that looks
+// exactly like the create articles page before changing
+//
   return (
     <div className="container mx-auto p-8">
       <h1 className="text-3xl font-bold mb-8">Manage Articles</h1>
@@ -34,8 +46,8 @@ export default function ManageArticles() {
               Published: {new Date(article.publishDate).toLocaleDateString()}
             </p>
             <div className="mt-4 space-x-4">
-              <button className="text-blue-500 hover:underline">Edit</button>
-              <button className="text-red-500 hover:underline">Delete</button>
+              <Link href="/admin/create-article" className="text-blue-500 hover:underline">Edit</Link>
+              <button onClick={() => handleDelete(article)} className="text-red-500 hover:underline">Delete</button>
             </div>
           </div>
         ))}
