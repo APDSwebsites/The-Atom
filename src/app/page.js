@@ -5,7 +5,7 @@ import Layout from "../components/Layout";
 //const fetch = require('node-fetch');
 import { useState, useEffect } from "react";
 
-
+//pedantic change
 
 export default function Home() {
 
