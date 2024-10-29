@@ -26,15 +26,6 @@ export default function Layout({ children }) {
           height={200} // Set the height to the original size
           priority
         />
-
-        <div className="absolute top-4 left-4 w-16 h-16 md:w-24 md:h-24">
-          <Image
-            src="/images/the-atom-logo.jpg"
-            alt="The Atom Logo"
-            layout="fill"
-            objectFit="contain"
-          />
-        </div>
       </header>
 
       <nav className="bg-[#f07c34] text-black">
