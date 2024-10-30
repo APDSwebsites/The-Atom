@@ -1,3 +1,31 @@
+tsconfig.json
+
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+
+
 MONGODB_URI=mongodb+srv://sethshuey1:YSedTMwYcS77yilr@cluster0.2rpti.mongodb.net/theatom?retryWrites=true&w=majority
 mongodb+srv://<db_username>:<db_password>@cluster0.2rpti.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 LizAdams

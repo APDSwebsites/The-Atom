@@ -1,10 +1,12 @@
 "use client";
+import { useSession } from "next-auth/react";
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Layout({ children }) {
+  const { data: session } = useSession(); // Add this line for session management
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -22,12 +24,11 @@ export default function Layout({ children }) {
         <Image
           src="/images/Atom Logo Full.svg"
           alt="The Atom Header"
-          width={500} // Set the width to the original size
-          height={200} // Set the height to the original size
+          width={500}
+          height={200}
           priority
         />
       </header>
-
       <nav className="bg-[#f07c34] text-black">
         <div className="container mx-auto py-2">
           <ul
@@ -50,7 +51,8 @@ export default function Layout({ children }) {
                 Search
               </Link>
             </li>
-            {process.env.NODE_ENV === "development" && (
+            {/* Replace the development check with session-based check */}
+            {session?.user?.role === "admin" && (
               <li className={isMobile ? "mb-2" : ""}>
                 <Link href="/admin" className="hover:text-gray-300">
                   Admin
@@ -60,11 +62,9 @@ export default function Layout({ children }) {
           </ul>
         </div>
       </nav>
-
       <main className="flex-grow container mx-auto py-8 px-4 md:px-0">
         {children}
       </main>
-
       <footer className="bg-black text-white p-4">
         <div className="container mx-auto text-center">
           <p>Published by Atom Media</p>
@@ -72,8 +72,8 @@ export default function Layout({ children }) {
             <Image
               src="/images/the-atom-logo.jpg"
               alt="The Atom Logo"
-              layout="fill"
-              objectFit="contain"
+              fill
+              className="object-contain"
             />
           </div>
         </div>
