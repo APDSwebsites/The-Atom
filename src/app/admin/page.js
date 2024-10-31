@@ -14,7 +14,7 @@ export default function AdminDashboard() {
       </p>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {/* Available to both admin and super-admin */}
+        {/* Content Management - Available to both admin and super-admin */}
         <Link
           href="/admin/create-article"
           className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition-shadow"
@@ -37,6 +37,23 @@ export default function AdminDashboard() {
         >
           <h2 className="text-xl font-semibold mb-2">Media Library</h2>
           <p className="text-gray-600">Manage uploaded images and files</p>
+        </Link>
+
+        {/* Ad Management - Available to both admin and super-admin */}
+        <Link
+          href="/admin/create-ad"
+          className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition-shadow"
+        >
+          <h2 className="text-xl font-semibold mb-2">Create Advertisement</h2>
+          <p className="text-gray-600">Create new sponsored content</p>
+        </Link>
+
+        <Link
+          href="/admin/manage-ads"
+          className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition-shadow"
+        >
+          <h2 className="text-xl font-semibold mb-2">Manage Advertisements</h2>
+          <p className="text-gray-600">Edit or remove sponsored content</p>
         </Link>
 
         {/* Super-admin only features */}

@@ -1,30 +1,22 @@
 import { NextResponse } from "next/server";
 import dbConnect from "@/lib/mongodb";
 import Article from "@/models/Article";
+import { auth } from "@/auth";
 
 export async function POST(request) {
   try {
-    console.log("Connecting to database...");
+    const session = await auth();
+    if (!session) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
     await dbConnect();
-    console.log("Database connected successfully");
-
     const data = await request.json();
-    console.log("Received data:", data);
-
     const article = await Article.create(data);
-    console.log("Article created:", article);
 
-    return NextResponse.json({ success: true, data: article }, { status: 201 });
+    return NextResponse.json(article, { status: 201 });
   } catch (error) {
-    console.error("Detailed error:", error);
-    return NextResponse.json(
-      {
-        success: false,
-        error: error.message,
-        stack: process.env.NODE_ENV === "development" ? error.stack : undefined,
-      },
-      { status: 400 }
-    );
+    return NextResponse.json({ error: error.message }, { status: 400 });
   }
 }
 
@@ -32,16 +24,8 @@ export async function GET() {
   try {
     await dbConnect();
     const articles = await Article.find({}).sort({ publishDate: -1 });
-    return NextResponse.json({ success: true, data: articles });
+    return NextResponse.json(articles);
   } catch (error) {
-    console.error("Detailed error:", error);
-    return NextResponse.json(
-      {
-        success: false,
-        error: error.message,
-        stack: process.env.NODE_ENV === "development" ? error.stack : undefined,
-      },
-      { status: 400 }
-    );
+    return NextResponse.json({ error: error.message }, { status: 400 });
   }
 }
