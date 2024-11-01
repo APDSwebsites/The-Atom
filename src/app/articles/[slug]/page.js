@@ -2,6 +2,7 @@ import dbConnect from "@/lib/mongodb";
 import Article from "@/models/Article";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import Layout from "@/components/Layout";
 
 export default async function ArticlePage({ params }) {
   await dbConnect();
@@ -42,6 +43,7 @@ export default async function ArticlePage({ params }) {
   };
 
   return (
+    <Layout>
     <article className="max-w-4xl mx-auto p-8">
       <h1 className="text-4xl font-bold mb-4">{article.title}</h1>
       <div className="text-gray-600 mb-4">
@@ -64,5 +66,7 @@ export default async function ArticlePage({ params }) {
         {article.content.sort((a, b) => a.order - b.order).map(renderBlock)}
       </div>
     </article>
+
+    </Layout>
   );
 }
