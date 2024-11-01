@@ -1,9 +1,9 @@
 {
-  "/admin/create-article/page": "app/admin/create-article/page.js",
-  "/about/page": "app/about/page.js",
-  "/archive/page": "app/archive/page.js",
-  "/admin/manage-articles/page": "app/admin/manage-articles/page.js",
   "/page": "app/page.js",
+  "/api/articles/route": "app/api/articles/route.js",
   "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
-  "/api/articles/route": "app/api/articles/route.js"
+  "/archive/page": "app/archive/page.js",
+  "/api/ads/route": "app/api/ads/route.js",
+  "/admin/create-article/page": "app/admin/create-article/page.js",
+  "/admin/page": "app/admin/page.js"
 }
