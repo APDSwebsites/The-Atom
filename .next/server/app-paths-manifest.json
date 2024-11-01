@@ -1,7 +1,7 @@
 {
   "/page": "app/page.js",
-  "/archive/page": "app/archive/page.js",
-  "/admin/create-article/page": "app/admin/create-article/page.js",
   "/articles/[slug]/page": "app/articles/[slug]/page.js",
-  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js"
+  "/archive/page": "app/archive/page.js",
+  "/about/page": "app/about/page.js",
+  "/admin/create-article/page": "app/admin/create-article/page.js"
 }

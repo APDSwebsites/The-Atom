@@ -70,3 +70,5 @@ export default async function ArticlePage({ params }) {
     </Layout>
   );
 }
+
+//http://localhost:3000/article/The%20Producers

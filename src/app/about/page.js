@@ -7,16 +7,16 @@ import Image from "next/image";
 //var tempPic = new Image();
 //var source = "/images/Liz.jpg";
 var editorName = "Liz Adams";
-var editorBio = "";
+var editorBio = "Liz adams is the Editor of the Atom";
 var editorPic = "/images/Liz.jpg";
 var artistName = "Chris Adams";
-var artistBio = "";
+var artistBio = "Chirs Adams is the digital artist for the Atom";
 var artistPic = "/images/image0.jpeg";
 var webDevOneName = "Seth Shuey";
-var webDevOneBio = "Seth Shuey is a failed comedian who took up web development as a last resort.";
+var webDevOneBio = "Seth Shuey is the owner of Abducted Prarie Dog Studio and the head web developer";
 var webDevOnePic = "/images/APDS-logo.png";
 var webDevTwoName = "Peter Massey";
-var webDevTwoBio = "Peter Massey is a successful comedian who Seth dragged along with him. He is secretly plotting to make Seth a failed web developer as well. Seth told me to put anything i want for his bio as long as it doesnt include communism or the antichrist";
+var webDevTwoBio = "Peter Massey is an employee of Abducted Prarie Dog Studio as a web developer";
 var webDevTwoPic = "/images/APDS-logo.png";
 
 let people = [
@@ -51,7 +51,7 @@ export default function About() {
                   priority
                 />
                 <div>
-                  {/*<p>{role.bio}</p>*/}
+                  <p>{role.bio}</p>
                 </div>
               </div>
             </div>
